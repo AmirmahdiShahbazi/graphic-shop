@@ -34,13 +34,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link active">
+                                <a href="{{route('admin-panel.category.all')}}" class="nav-link ">
                                     <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>داشبورد اول</p>
+                                    <p>دسته بندی ها</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./index2.html" class="nav-link">
+                                <a  class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
                                     <p>داشبورد دوم</p>
                                 </a>
@@ -64,7 +64,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/charts/chartjs.html" class="nav-link">
+                                <a  class="nav-link">
                                     <i class="fa fa-plus"></i>
                                     <p style="margin-right: 5px;">افزودن</p>
                                 </a>

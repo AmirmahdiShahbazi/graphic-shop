@@ -1,48 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>پنل مدیریت | داشبورد اول</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="/admin/plugins/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="/admin/https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="/admin/dist/css/adminlte.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="/admin/plugins/iCheck/flat/blue.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="/admin/plugins/morris/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="/admin/plugins/datepicker/datepicker3.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="/admin/plugins/daterangepicker/daterangepicker-bs3.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <!-- bootstrap rtl -->
-  <link rel="stylesheet" href="/admin/dist/css/bootstrap-rtl.min.css">
-  <!-- template rtl version -->
-  <link rel="stylesheet" href="/admin/dist/css/custom-style.css">
+    <style>
+        .operation:focus{
+            outline: none;
+        }
+        .operation:hover{
+            cursor: pointer;
+            background-color: lightgray;
+        }
+        .operation:active{
+            background-color: #dcdcdc;
+        }
+        .category-form{
+
+            padding: 15px 5px;
+            box-shadow: 0px 0px 10px #dcdcdc;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            margin-top: 30px;
+
+        }
+
+        .submit-btn input {
+            background-color: #0678F1;
+            border: 0px;
+            color: white;
+            padding: 7px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .btn-style{
+            background-color: #0678F1;
+            border: 0px;
+            color: white;
+            padding: 7px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-left: 50px;
+            float: left;
+        }
+        .btn-style:hover{
+            background-color: #025fbf;
+        }
+        .btn-style:active{
+            background-color: #0678F1;
+        }
+        .submit-btn input:hover{
+            background-color: #025fbf;
+        }
+        .submit-btn input:active{
+            background-color: #0678F1;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>پنل مدیریت | داشبورد اول</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/admin/plugins/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/admin/https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/admin/dist/css/adminlte.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="/admin/plugins/iCheck/flat/blue.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="/admin/plugins/morris/morris.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="/admin/plugins/datepicker/datepicker3.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="/admin/plugins/daterangepicker/daterangepicker-bs3.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- bootstrap rtl -->
+    <link rel="stylesheet" href="/admin/dist/css/bootstrap-rtl.min.css">
+    <!-- template rtl version -->
+    <link rel="stylesheet" href="/admin/dist/css/custom-style.css">
 
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
 
-  @include('layouts.admin.header')
-  @include('layouts.admin.sidebar')
+    @include('layouts.admin.header')
+    @include('layouts.admin.sidebar')
     @yield('content')
-  @include('layouts.admin.footer')
-
-
-
+    @include('layouts.admin.footer')
 
 
 </div>
@@ -54,7 +107,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-$.widget.bridge('uibutton', $.ui.button)
+    $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
 <script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
