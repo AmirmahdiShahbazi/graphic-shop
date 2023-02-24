@@ -40,7 +40,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a  class="nav-link">
+                                <a href="{{route('admin-panel.products.create')}}" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
                                     <p>داشبورد دوم</p>
                                 </a>

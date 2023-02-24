@@ -1,6 +1,12 @@
 @extends('layouts.admin.master')
 @section('content')
-    <div style="margin-right: 300px;margin-left: 50px;">
+    <div style="margin-right: 300px; margin-top: 50px;">
+        <h3 style="display: inline-block">محصولات/افزودن</h3>
+{{--        <a href="{{route('admin-panel.category.all')}}">--}}
+{{--            <button class="btn-style">بازگشت به صفحه دسته بندی ها</button>--}}
+{{--        </a>--}}
+    </div >
+    <div style="margin-right: 300px;margin-left: 50px;margin-top: 30px;background-color:#F0F6FF;box-shadow: 0px 0px  10px #dcdcdc; border-radius: 7px;">
         <form action="" method="post">
             <div class="card-body">
                 <div class="row">
@@ -48,11 +54,11 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>توضیحات</label>
-                    <textarea name="description" id="editor"> لطفا متن مورد نظر خود را وارد کنید</textarea>
+                    <label style="display: block">توضیحات</label>
+                    <textarea name="description" id="editor" > لطفا متن مورد نظر خود را وارد کنید</textarea>
                 </div>
+                <button type="submit" class="btn btn-primary float-left">ذخیره کردن</button>
             </div>
-            <button type="submit" class="btn btn-primary float-left">ذخیره کردن</button>
         </form>
     </div>
 

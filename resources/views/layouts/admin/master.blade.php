@@ -57,6 +57,11 @@
             background-color: #0678F1;
         }
     </style>
+    <link rel='stylesheet' href='https://unpkg.com/react-quill@1.0.0/dist/quill.core.css'>
+    <link rel='stylesheet' href='https://unpkg.com/react-quill@1.0.0/dist/quill.snow.css'>
+    <link rel='stylesheet' href='https://unpkg.com/react-quill@1.0.0/dist/quill.bubble.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/draft-js/0.10.0/Draft.min.css'>
+    <link rel="stylesheet" href="/admin/dist/style.css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>پنل مدیریت | داشبورد اول</title>
@@ -138,5 +143,17 @@
 <script src="/admin/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/admin/dist/js/demo.js"></script>
+
+
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.1/immutable.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.3/es6-shim.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/draft-js/0.10.0/Draft.js'></script>
+<script  src="/admin/dist/js/script.js"></script>
 </body>
 </html>
