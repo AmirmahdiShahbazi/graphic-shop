@@ -15,5 +15,8 @@ Route::prefix('admin-panel')->group(function (){
        Route::get('edit/{category_id}',[CategoriesController::class,'edit'])->name('admin-panel.categories.edit');
        Route::put('update/{category_id}',[CategoriesController::class,'update'])->name('admin-panel.categories.update');
    }) ;
+   Route::prefix('products')->group(function (){
+      Route::get('create',[ProductsController::class,'create'])->name('admin-panel.products.create');
+   });
 });
 
