@@ -6,8 +6,10 @@
 {{--            <button class="btn-style">بازگشت به صفحه دسته بندی ها</button>--}}
 {{--        </a>--}}
     </div >
+    @include('errors.master')
     <div style="margin-right: 300px;margin-left: 50px;margin-top: 30px;background-color:#F0F6FF;box-shadow: 0px 0px  10px #dcdcdc; border-radius: 7px;">
-        <form action="" method="post">
+        <form action="{{route('admin-panel.products.store')}}" method="post" enctype="multipart/form-data">
+            @csrf
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
@@ -20,9 +22,10 @@
                         <div class="form-group">
                             <label>دسته بندی</label>
                             <select class="form-control" name="category_id">
-                                <option>کارت ویزیت</option>
-                                <option>بنر</option>
-                                <option>تراکت</option>
+                                @foreach($categories as $category)
+                                <option value="{{$category->id}}">{{$category->title}}</option>
+                                @endforeach
+
                             </select>
                         </div>
                     </div>

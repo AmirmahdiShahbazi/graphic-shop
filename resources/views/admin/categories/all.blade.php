@@ -6,14 +6,7 @@
             <button class="btn-style">افزودن دسته بندی</button>
         </a>
     </div>
-    @if(session('success'))
-        <div style="margin-right: 300px;margin-left: 50px;" class="alert alert-success">{{session('success')}}</div>
-    @endif
-    @if(session('failed'))
-        <div class="alert alert-success">{{session('failed')}}</div>
-    @endif
-
-
+    @include('errors.master')
     <div style="margin-right: 300px; margin-left: 50px;margin-top: 20px;
      box-shadow: 0px 0px 10px #dcdcdc; border-radius: 5px;">
         <div style="padding: 10px;">

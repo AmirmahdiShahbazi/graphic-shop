@@ -18,6 +18,7 @@ Route::prefix('admin-panel')->group(function (){
    }) ;
    Route::prefix('products')->group(function (){
       Route::get('create',[ProductsController::class,'create'])->name('admin-panel.products.create');
+      Route::post('',[ProductsController::class,'store'])->name('admin-panel.products.store');
    });
 });
 

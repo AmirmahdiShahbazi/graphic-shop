@@ -7,21 +7,8 @@
             <button class="btn-style">بازگشت به صفحه دسته بندی ها</button>
         </a>
     </div>
-    @if ($errors->any())
-        <div class="alert alert-danger" style="margin-right: 300px;margin-left: 50px;">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    @if(session('success'))
-        <div style="margin-right: 300px;margin-left: 50px;" class="alert alert-success">{{session('success')}}</div>
-    @endif
-    @if(session('failed'))
-        <div class="alert alert-success">{{session('failed')}}</div>
-    @endif
+    @include('errors.master')
+
 
     <form class="category-form" action="{{route('admin-panel.categories.update',$category->id)}}" method="post"
           style="margin: 20px 290px 10px 50px;">
