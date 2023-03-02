@@ -43,7 +43,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>تصویر شاخص</label>
-                            <input type="file" name="thumbnail_url" class="form-control">
+                            <input type="file" name="" class="form-control">
                             <img src="/{{$product->thumbnail_url}}" style="width: 90px;height: 90px;margin-top: 10px;">
                         </div>
                     </div>
