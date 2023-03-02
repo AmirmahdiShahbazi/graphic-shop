@@ -42,13 +42,13 @@
                             <li class="nav-item">
                                 <a href="{{route('admin-panel.products.create')}}" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>داشبورد دوم</p>
+                                    <p>افزودن محصول</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./index3.html" class="nav-link">
+                                <a href="{{route('admin-panel.products.all')}}" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>داشبورد سوم</p>
+                                    <p>لیست محصولات</p>
                                 </a>
                             </li>
                         </ul>

@@ -23,6 +23,12 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+
+    }
+
 
 
 }
