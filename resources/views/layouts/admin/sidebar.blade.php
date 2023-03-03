@@ -64,13 +64,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a  class="nav-link">
+                                <a  class="nav-link" href="{{route('admin-panel.users.create')}}">
                                     <i class="fa fa-plus"></i>
                                     <p style="margin-right: 5px;">افزودن</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/calendar.html" class="nav-link">
+                                <a href="{{route('admin-panel.users.all')}}" class="nav-link" >
                                     <i class="fa fa-list"></i>
                                     <p style="margin-right: 5px;">
                                         لیست کاربران
@@ -85,7 +85,7 @@
 
 
                     <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
+                        <a href="{{route('admin-panel.orders.all')}}" class="nav-link">
                             <i class="fa fa-shopping-cart"></i>
                             <p style="margin-right: 5px;">
                                 سفارشات

@@ -3,8 +3,8 @@
 
     <div style="margin-right: 300px; margin-top: 50px;">
         <h3 style="display: inline-block">کاربران / افزودن</h3>
-        <a href="{{route('admin-panel.category.all')}}">
-            <button class="btn-style">بازگشت به صفحه دسته بندی ها</button>
+        <a href="{{route('admin-panel.users.all')}}">
+            <button class="btn-style">بازگشت به صفحه کاربران</button>
         </a>
     </div>
     @include('errors.master')
