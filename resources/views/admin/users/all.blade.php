@@ -36,7 +36,7 @@
                     <td>{{$user->created_at}}</td>
                     <td>
 
-                        <form action=""
+                        <form action="{{route('admin-panel.users.delete',$user->id)}}"
                               style="display: inline-block" method="POST">
                             @csrf
                             @method('delete')
@@ -44,7 +44,7 @@
                                 <i class="fa fa-trash"></i>
                             </button>
                         </form>
-                        <form action=""
+                        <form action="{{route('admin-panel.users.edit',$user->id)}}"
                               style="display: inline-block" method="GET">
                             <button type="submit" class="operation" style="border: 1px solid #dcdcdc;">
                                 <i class="fa fa-edit"></i>

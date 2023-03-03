@@ -29,6 +29,9 @@ Route::prefix('admin-panel')->group(function () {
         Route::get('',[UsersController::class,'all'])->name('admin-panel.users.all');
         Route::get('create',[UsersController::class,'create'])->name('admin-panel.users.create');
         Route::post('',[UsersController::class,'store'])->name('admin-panel.users.store');
+        Route::delete('delete/{user_id}',[UsersController::class,'delete'])->name('admin-panel.users.delete');
+        Route::get('edit/{user_id}',[UsersController::class,'edit'])->name('admin-panel.users.edit');
+        Route::put('update/{user_id}',[UsersController::class,'update'])->name('admin-panel.users.update');
     });
 });
 

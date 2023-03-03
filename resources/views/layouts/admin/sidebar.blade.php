@@ -26,7 +26,7 @@
         with font-awesome or any other icon font library -->
                     <li class="nav-item has-treeview menu-open">
                         <a href="#" class="nav-link active">
-                            <i class="nav-icon fa fa-dashboard"></i>
+                            <i class="nav-icon fa fa-picture-o"></i>
                             <p>
                                 مدیریت محصولات
                                 <i class="right fa fa-angle-left"></i>
@@ -35,19 +35,19 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{route('admin-panel.category.all')}}" class="nav-link ">
-                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <i class="fa fa-list-alt "></i>
                                     <p>دسته بندی ها</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{route('admin-panel.products.create')}}" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <i class="fa fa-plus"></i>
                                     <p>افزودن محصول</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{route('admin-panel.products.all')}}" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <i class="fa fa-list"></i>
                                     <p>لیست محصولات</p>
                                 </a>
                             </li>
@@ -69,19 +69,20 @@
                                     <p style="margin-right: 5px;">افزودن</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="pages/calendar.html" class="nav-link">
+                                    <i class="fa fa-list"></i>
+                                    <p style="margin-right: 5px;">
+                                        لیست کاربران
+
+                                    </p>
+                                </a>
+                            </li>
 
                         </ul>
                     </li>
 
-                    <li class="nav-item">
-                        <a href="pages/calendar.html" class="nav-link">
-                            <i class="fa fa-list"></i>
-                            <p style="margin-right: 5px;">
-                                لیست
 
-                            </p>
-                        </a>
-                    </li>
 
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
