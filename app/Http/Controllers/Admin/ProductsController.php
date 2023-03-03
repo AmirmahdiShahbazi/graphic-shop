@@ -89,26 +89,22 @@ class ProductsController extends Controller
     public function update(UpdateRequest $request, $product_id)
     {
         try {
-
-
-
             $validatedData = $request->validated();
 
             $product = Product::find($product_id);
-        $product->update([
-            'title' => $validatedData['title'],
-            'price' => $validatedData['price'],
-            'description' => $validatedData['description'],
-            'category_id' => $validatedData['category_id'],
-        ]);
-        if (!$this->uploadImage($product, $validatedData)) {
-            throw new \Exception('محصول به روز رسانی نشد');
+            $product->update([
+                'title' => $validatedData['title'],
+                'price' => $validatedData['price'],
+                'description' => $validatedData['description'],
+                'category_id' => $validatedData['category_id'],
+            ]);
+            if (!$this->uploadImage($product, $validatedData)) {
+                throw new \Exception('محصول به روز رسانی نشد');
+            }
+            return back()->with('success', 'محصول به روز رسانی شد');
+        } catch (\Exception $exception) {
+            return back()->with('failed', $exception->getMessage());
         }
-            return back()->with('success','محصول به روز رسانی شد');
-        }catch (\Exception $exception){
-            return back()->with('failed',$exception->getMessage());
-        }
-
 
 
     }

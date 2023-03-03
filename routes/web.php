@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\ProductsController;
-use App\Models\Category;
+use App\Http\Controllers\Admin\UsersController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -24,6 +24,11 @@ Route::prefix('admin-panel')->group(function () {
         Route::delete('delete/{product_id}', [ProductsController::class, 'delete'])->name('admin-panel.products.delete');
         Route::get('edit/{product_id}', [ProductsController::class, 'edit'])->name('admin-panel.products.edit');
         Route::put('update/{product_id}', [ProductsController::class, 'update'])->name('admin-panel.products.update');
+    });
+    Route::prefix('users')->group(function (){
+        Route::get('',[UsersController::class,'all'])->name('admin-panel.users.all');
+        Route::get('create',[UsersController::class,'create'])->name('admin-panel.users.create');
+        Route::post('',[UsersController::class,'store'])->name('admin-panel.users.store');
     });
 });
 
