@@ -24,7 +24,7 @@ class StoreRequest extends FormRequest
         return [
             'name'=>'required|min:3|max:250',
             'email'=>'required|email|unique:users,email',
-            'mobile'=>'required|mobile|unique:users,mobile',
+            'mobile'=>'required|digits:11|unique:users,mobile',
             'role'=>'required|in:user,admin',
         ];
     }

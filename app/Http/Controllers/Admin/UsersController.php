@@ -22,6 +22,21 @@ class UsersController extends Controller
 
     public function store(StoreRequest $request)
     {
+        $validatedDate=$request->validated();
+
+
+        $created=User::create([
+                'name'=>$validatedDate['name'],
+                'mobile'=>$validatedDate['mobile'],
+                'email'=>$validatedDate['email'],
+                'role'=>$validatedDate['role'],
+            ]
+        );
+        if(!$created){
+            return back()->with('failed','محصول ساخته نشد');
+        }
+        return back()->with('success','محصول ساخته شد');
+
 
     }
 }
