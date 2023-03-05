@@ -5,8 +5,14 @@ use App\Http\Controllers\Admin\OrdersController;
 use App\Http\Controllers\Admin\PaymentsController;
 use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Home\HomeController;
+use \App\Http\Controllers\Home\ProductsController as HomeProductController;
 use Illuminate\Support\Facades\Route;
 
+Route::prefix('')->group(callback: function (){
+   Route::get('',[HomeProductController::class,'index'])->name('home.products.all');
+
+});
 
 Route::prefix('admin-panel')->group(function () {
     Route::prefix('category')->group(function () {
