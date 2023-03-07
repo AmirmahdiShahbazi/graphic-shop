@@ -1,10 +1,29 @@
 @extends('layouts.frontend.master')
 @section('content')
-     <!---------------------------------->
+    <div class="main-menu" style="margin-bottom: 20px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul>
+                        <li>
+                            <a href="{{route('home.products.all')}}" class="category-btn {{!isset($category_id)?'selected':''}}">همه ی دسته بندی ها</a>
+                        </li>
+                        @foreach($categories as $category)
+                        <li>
+                            <a href="{{route('home.filterByCategory',$category->id)}}" class="category-btn {{isset($category_id)&&$category->id==$category_id?'selected':''}}" >{{$category->title}}</a>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------------------------------->
           <div class="container">
              <div class="row">
                  @foreach($products as $product)
-                <div class="col-md-4">
+                <div class="col-md-4 category{{$product->category_id}}" >
                    <div class="blog-content">
                       <figure>
                          <img src="/{{$product->thumbnail_url}}" class="w-100">

@@ -14,6 +14,33 @@
       <link href="/frontend/style/bootstrap.css" rel="stylesheet" type="text/css">
       <link href="/frontend/style/owl.carousel.css" rel="stylesheet" type="text/css">
       <link href="/frontend/style/owl.theme.default.css" rel="stylesheet" type="text/css">
+
+       <style>
+           .category-btn{
+               display: block;
+               padding: 15px 10px;
+               color: #616161;
+               font-size: 12px;
+               transition: all 0.2s;
+               -webkit-transition: all 0.2s;
+               -moz-transition: all 0.2s;
+               -o-transition: all 0.2s;
+               background-color: transparent;
+               border: none;
+           }
+           .category-btn:hover{
+               background-color: #ffffff;
+           }
+           .category-btn:focus{
+              outline: none;
+               border:none;
+           }
+           .selected
+           {
+            background-color: #fff1f1;
+           }
+
+       </style>
    </head>
    <body>
 

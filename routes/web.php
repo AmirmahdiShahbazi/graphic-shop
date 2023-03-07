@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('')->group(callback: function (){
    Route::get('',[HomeProductController::class,'index'])->name('home.products.all');
    Route::get('show/{product_id}',[HomeProductController::class,'show'])->name('home.show');
+   Route::get('category/{category_id}',[HomeProductController::class,'filterByCategory'])->name('home.filterByCategory');
 
 });
 
