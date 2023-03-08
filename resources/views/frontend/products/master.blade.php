@@ -1,5 +1,6 @@
 @extends('layouts.frontend.master')
 @section('content')
+
     <div class="main-menu" style="margin-bottom: 20px;">
         <div class="container">
             <div class="row">
@@ -13,10 +14,57 @@
                             <a href="{{route('home.filterByCategory',$category->id)}}" class="category-btn {{isset($category_id)&&$category->id==$category_id?'selected':''}}" >{{$category->title}}</a>
                         </li>
                         @endforeach
+                        <ul style="float: left">
+                            <li>
+                                <a href="#" style="margin-left: 20px;">مرتب سازی بر اساس</a>
+                                <ul >
+                                    <li><a href="?filter=orderby&action=newest">جدید ترین</a></li>
+                                    <li><a href="?filter=orderby&action=lowtohigh">قیمت: کم به زیاد</a></li>
+                                    <li><a href="?filter=orderby&action=hightolow">قیمت: زیاد به کم</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul style="float: left">
+                            <li>
+                                <a href="#" style="margin-left: 20px;">کالای دیجیتال</a>
+                                <ul >
+                                    <li><a href="#">گوشی موبایل</a></li>
+                                    <li><a href="#">تبلت</a></li>
+                                    <li><a href="#">لپ تاپ</a></li>
+                                    <li><a href="#">نمایشگر</a></li>
+                                    <li><a href="#">دوربین عکاسی</a></li>
+                                    <li><a href="#">لوازم جانبی رایانه</a></li>
+                                    <li><a href="#">لوازم جانبی موبایل</a></li>
+                                    <li><a href="#">سایر</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul style="float: left">
+                            <li>
+                                <a href="#" style="margin-left: 20px;">کالای دیجیتال</a>
+                                <ul >
+                                    <li><a href="#">گوشی موبایل</a></li>
+                                    <li><a href="#">تبلت</a></li>
+                                    <li><a href="#">لپ تاپ</a></li>
+                                    <li><a href="#">نمایشگر</a></li>
+                                    <li><a href="#">دوربین عکاسی</a></li>
+                                    <li><a href="#">لوازم جانبی رایانه</a></li>
+                                    <li><a href="#">لوازم جانبی موبایل</a></li>
+                                    <li><a href="#">سایر</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
                     </ul>
+
                 </div>
+
             </div>
+
         </div>
+
+    </div>
     </div>
 
     <!---------------------------------->

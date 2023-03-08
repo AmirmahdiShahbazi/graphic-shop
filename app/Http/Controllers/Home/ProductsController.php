@@ -11,14 +11,16 @@ class ProductsController extends Controller
 {
     public function index(Request $request)
     {
-
         $products=[];
-        if($request->has('search'))
-        {
-            $products=Product::where('title','LIKE','%'.$request->input('search').'%')->get();
-        }else{
+        if(isset($request->filter,$request->action)){
+            $products=$this->findFilter($request->filter,$request->action);
 
+
+        }elseif($request->has('search')){
+            $products=Product::where('title','LIKE','%'.$request->input('search').'%')->get();
+        }else {
             $products = Product::all();
+
         }
         $categories=Category::all();
         return view('frontend.products.master', compact('products','categories'));
@@ -41,6 +43,21 @@ class ProductsController extends Controller
 
         return view('frontend.products.master',compact('products','categories','category_id'));
 
+
+    }
+    private function findFilter(string $className,string $methodName)
+    {
+        $baseNamespace='App\Http\Controllers\Filter\\';
+        $className=$baseNamespace.ucfirst($className).'Filter';
+        if(!class_exists($className)){
+            return null;
+        }
+        $object=new $className;
+
+        if(!method_exists($object,$methodName)){
+            return null;
+        }
+        return $object->$methodName();
 
     }
 }
