@@ -6,15 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use function PHPUnit\Framework\isNull;
 
 class ProductsController extends Controller
 {
     public function index(Request $request)
     {
         $products=[];
-        if(isset($request->filter,$request->action)){
-            $products=$this->findFilter($request->filter,$request->action);
-
+        if(isset($request->filter,$request->action,$request->value)){
+            $products=$this->findFilter($request->filter,$request->action,$request->value)??Product::all();
 
         }elseif($request->has('search')){
             $products=Product::where('title','LIKE','%'.$request->input('search').'%')->get();
@@ -45,7 +45,7 @@ class ProductsController extends Controller
 
 
     }
-    private function findFilter(string $className,string $methodName)
+    private function findFilter(string $className,string $methodName,string $value=null)
     {
         $baseNamespace='App\Http\Controllers\Filter\\';
         $className=$baseNamespace.ucfirst($className).'Filter';
@@ -56,6 +56,10 @@ class ProductsController extends Controller
 
         if(!method_exists($object,$methodName)){
             return null;
+        }
+        if(!empty($value)){
+
+            return $object->$methodName($value);
         }
         return $object->$methodName();
 

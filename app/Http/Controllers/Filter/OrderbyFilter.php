@@ -23,5 +23,10 @@ class OrderbyFilter
         return Product::orderBy('price', 'DESC')->get();
 
     }
+    public function default()
+    {
+        return Product::all();
+
+    }
 
 }
