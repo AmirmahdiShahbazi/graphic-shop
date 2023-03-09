@@ -1,5 +1,8 @@
 @extends('layouts.frontend.master')
 @section('content')
+
+    @include('errors.master')
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -15,7 +18,7 @@
                             <hr>
                             <h3>{{$product->price}} تومان</h3>
                             <div class="btn-single">
-                                <a href="#"><i class="fa fa-cart-plus"></i>خرید آنلاین</a>
+                                <a href="{{route('home.addToBasket',$product->id)}}"><i class="fa fa-cart-plus"></i>خرید</a>
                             </div>
                         </div>
                         <div class="col-md-5">
@@ -57,8 +60,9 @@
     </div>
 
     <div class="container" style="margin-top: 30px;">
-    @foreach($similarProducts as $similarProduct)
-    <div class="col-md-4">
+
+    <div class="col-md-4" >
+        @foreach($similarProducts as $similarProduct)
         <div class="blog-content">
             <figure>
                 <img src="/{{$similarProduct->thumbnail_url}}" class="w-100">
@@ -71,8 +75,9 @@
             </ul>
             <a href="{{route('home.show',$product->id)}}" class="mybtn"><i class="fa fa-continuous"></i>ادامه مطلب&raquo;</a>
         </div>
+        @endforeach
     </div>
-    @endforeach
+
     </div>
 
 

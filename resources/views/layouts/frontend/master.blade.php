@@ -17,6 +17,8 @@
       <link href="/frontend/style/bootstrap.css" rel="stylesheet" type="text/css">
       <link href="/frontend/style/owl.carousel.css" rel="stylesheet" type="text/css">
       <link href="/frontend/style/owl.theme.default.css" rel="stylesheet" type="text/css">
+       <link type="text/css" href="/basket_shop/css/style.css" rel="stylesheet" />
+
 
        <style>
            .dropbtn {
@@ -87,7 +89,7 @@
 
       @yield('content')
 
-      @include('layouts.frontend.footer')
+{{--      @include('layouts.frontend.footer')--}}
 
       <script src="/frontend/js/jquery-3.3.1.js" type="text/javascript"></script>
       <script src="/frontend/jquery.simple.timer.js" type="text/javascript"></script>
@@ -112,7 +114,9 @@
           });
       </script>
 
-
+      <script src="/basket_shop/js/jquery-3.1.1.min.js"></script>
+      <script src="/basket_shop/js/jquery-ui.min.js"></script>
+      <script  src="/basket_shop/js/scripts.js"></script>
 
    </body>
 </html>
