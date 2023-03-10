@@ -1,10 +1,16 @@
 @php use Illuminate\Support\Facades\Cookie; @endphp
 @extends('layouts.frontend.master')
 @section('content')
+
     <div style="margin-right: 500px;">
         @include('errors.master')
     </div>
-    <div class="content" style="border: none;">
+                             
+
+    <div class="content" style="border: none; background-color:#FBFBFB;">
+     @if(is_null(json_decode(Cookie::get('basket'),true)))
+    <div class="alert alert-warning" style="margin-left: 200px;margin-bottom:30px;">سبد خرید شما خالی است</div> 
+    @else 
         <h1>سبد خرید</h1>
 
 
@@ -19,8 +25,9 @@
             </tr>
             <!-- end table head -->
             </thead>
+
             <tbody>
-            <!-- start table body -->
+            <!-- start table body --> 
             @foreach(json_decode(Cookie::get('basket'),true) as $id =>$value)
                 <tr>
                     <!-- start item one -->
@@ -46,26 +53,37 @@
                 </tr>
             @endforeach
 
+            
             <!-- end table body -->
-            </tbody>
+        </tbody>
         </table>
-
-        <!-- start checkout list -->
-        <div class="cost" style="position: absolute;">
-            <h2>پیش فاکتور</h2>
+        <div class="cost" style="position: absolute; top:250px;">
+            <h2>مشصخات کاربر</h2>
+            <input type="text" placeholder="نام و نام خانوادگی" style="margin-left: 42px;  margin-top: 10px;">
+            <input type="text" placeholder="شماره تلفن" style="margin-left: 42px;  margin-top: 10px;">
+            <input type="text" placeholder="ایمیل" style="margin-left: 42px;  margin-top: 10px;">
 
             <table class="pricing">
                 <tbody>
                 <tr>
                     <td>قیمت کل</td>
-                    <td class="subtotal">{{array_sum(array_column(json_decode(Cookie::get('basket'),true),'price'))}} تومان</td>
+                    <td class="subtotal">
+                        @if (is_null(json_decode(Cookie::get('basket'),true)))
+                        0 تومان
+                        @else
+                        {{array_sum(array_column(json_decode(Cookie::get('basket'),true),'price'))}} تومان
+                        @endif
+                    </td>
                 </tr>
 
                 </tbody>
             </table>
             <a class="cta" href="#">خرید</a>
-        </div><!-- end checkout list -->
+        </div>
+        @endif
+
+        <!-- start checkout list -->
+ <!-- end checkout list -->
     </div> <!-- End Content -->
 
 @endsection
-
