@@ -33,7 +33,7 @@ return [
 
     'gatewayes'=>[
         'id_pay'=>[
-            'api_ley'=>'f120d2fd-907a-4c42-91d8-d28a39a065ff'
+            'api_key'=>'7635261d-f3e9-4656-952e-b4835d595c73'
         ],
     ],
 

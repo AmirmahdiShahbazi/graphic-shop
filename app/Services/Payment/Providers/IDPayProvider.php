@@ -1,7 +1,6 @@
 <?php
-
+namespace App\Services\Payment\Providers;
 use App\Services\Payment\Contracts\AbstractProviderInterface;
-use App\Services\Payment\Providers;
 use App\Services\Payment\Contracts\PaiableInterface;
 use App\Services\Payment\Contracts\VerifiableInterface;
 
@@ -24,14 +23,19 @@ class IDPayProvider extends AbstractProviderInterface implements PaiableInterfac
           curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
           curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             'Content-Type: application/json',
-            'X-API-KEY: 6a7f99eb-7c20-4412-a972-6dfb7cd253a4',
+            'X-API-KEY: '.$this->request->getApiKey(),
             'X-SANDBOX: 1'
           ));
           
-          $result = curl_exec($ch);
+          $result = json_decode(curl_exec($ch),true);
           curl_close($ch);
+          if(isset($result['error_code']))
+          {
+            throw new \InvalidArgumentException($result['error_message']);
+          }
+         
+          return redirect()->away($result['link']);
           
-          var_dump($result);
     }
     public function verify()
     {

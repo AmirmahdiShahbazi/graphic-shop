@@ -60,5 +60,5 @@ Route::prefix('admin-panel')->group(function () {
 
 Route::prefix('payment')->group(function(){
     Route::post('pay',[PaymentController::class,'pay'])->name('payment.pay');
-    Route::get('callback',[PaymentController::class,'callback']);
+    Route::get('callback',[PaymentController::class,'callback'])->name('payment.callback');
 });

@@ -63,9 +63,11 @@ class PaymentController extends Controller
                 'status'=>'unpaid'
             ]);
 
-            $request=new IDPayRequest(['orderId'=>$ref_code,
+            $request=new IDPayRequest([
                                         'user'=>$user,
-                                    'amount'=>$totalPrice]);
+                                    'amount'=>$totalPrice,
+                                    'orderId'=>$ref_code,
+                                'apiKey'=>config('services.gatewayes.id_pay.api_key')]);
 
             $service=new PaymentService(PaymentService::IDPAY,$request);
 
