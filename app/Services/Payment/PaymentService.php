@@ -9,7 +9,7 @@ class PaymentService
     public const IDPAY='IDPayProvider';
     private string $providerName;
     private RequestInterface $request;
-    public function __construc(string $providerName, RequestInterface $request)
+    public function __construct(string $providerName, RequestInterface $request)
     {
         $this->providerName=$providerName;
         $this->request=$request;

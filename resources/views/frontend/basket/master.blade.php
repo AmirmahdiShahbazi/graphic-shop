@@ -57,29 +57,32 @@
             <!-- end table body -->
         </tbody>
         </table>
-        <div class="cost" style="position: absolute; top:250px;">
-            <h2>مشصخات کاربر</h2>
-            <input type="text" placeholder="نام و نام خانوادگی" style="margin-left: 42px;  margin-top: 10px;">
-            <input type="text" placeholder="شماره تلفن" style="margin-left: 42px;  margin-top: 10px;">
-            <input type="text" placeholder="ایمیل" style="margin-left: 42px;  margin-top: 10px;">
+        <form method="post" action="{{route('payment.pay')}}">
+            @csrf
+            <div class="cost" style="position: absolute; top:250px;">
+                <h2>مشصخات کاربر</h2>
+                    <input type="text" name="name" placeholder="نام و نام خانوادگی" style="margin-left: 42px;  margin-top: 10px;">
+                    <input type="number" name="mobile" placeholder="شماره تلفن" style="margin-left: 42px;  margin-top: 10px;">
+                    <input type="email" name="email" placeholder="ایمیل" style="margin-left: 42px;  margin-top: 10px;">
+                
+                <table class="pricing">
+                    <tbody>
+                    <tr>
+                        <td>قیمت کل</td>
+                        <td class="subtotal">
+                            @if (is_null(json_decode(Cookie::get('basket'),true)))
+                            0 تومان
+                            @else
+                            {{array_sum(array_column(json_decode(Cookie::get('basket'),true),'price'))}} تومان
+                            @endif
+                        </td>
+                    </tr>
 
-            <table class="pricing">
-                <tbody>
-                <tr>
-                    <td>قیمت کل</td>
-                    <td class="subtotal">
-                        @if (is_null(json_decode(Cookie::get('basket'),true)))
-                        0 تومان
-                        @else
-                        {{array_sum(array_column(json_decode(Cookie::get('basket'),true),'price'))}} تومان
-                        @endif
-                    </td>
-                </tr>
-
-                </tbody>
-            </table>
-            <a class="cta" href="#">خرید</a>
-        </div>
+                    </tbody>
+                </table>
+                <button type="submit" class="">خرید</button>
+            </div>
+        </form>
         @endif
 
         <!-- start checkout list -->

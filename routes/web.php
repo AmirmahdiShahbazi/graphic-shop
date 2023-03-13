@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Home\BasketController;
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Home\PaymentController;
 use \App\Http\Controllers\Home\ProductsController as HomeProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -57,3 +58,7 @@ Route::prefix('admin-panel')->group(function () {
     });
 });
 
+Route::prefix('payment')->group(function(){
+    Route::post('pay',[PaymentController::class,'pay'])->name('payment.pay');
+    Route::get('callback',[PaymentController::class,'callback']);
+});
