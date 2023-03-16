@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\OrdersController;
 use App\Http\Controllers\Admin\PaymentsController;
 use App\Http\Controllers\Admin\ProductsController;
@@ -24,6 +25,11 @@ Route::prefix('')->group(callback: function () {
 
 
 Route::prefix('admin-panel')->group(function () {
+    Route::prefix('login')->group(function(){
+        Route::get('',[LoginController::class,'index'])->name('admin.login');
+    });
+
+
     Route::prefix('category')->group(function () {
         Route::get('all', [CategoriesController::class, 'all'])->name('admin-panel.category.all');
         Route::get('create', [CategoriesController::class, 'create'])->name('admin-panel.category.create');
@@ -60,5 +66,5 @@ Route::prefix('admin-panel')->group(function () {
 
 Route::prefix('payment')->group(function(){
     Route::post('pay',[PaymentController::class,'pay'])->name('payment.pay');
-    Route::get('callback',[PaymentController::class,'callback'])->name('payment.callback');
+    Route::post('callback',[PaymentController::class,'callback'])->name('payment.callback');
 });

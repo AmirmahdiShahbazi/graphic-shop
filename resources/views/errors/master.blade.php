@@ -11,6 +11,6 @@
     <div style="margin-right: 300px;margin-left: 50px;" class="alert alert-success">{{session('success')}}</div>
 @endif
 @if(session('failed'))
-    <div class="alert alert-success">{{session('failed')}}</div>
+    <div class="alert alert-danger">{{session('failed')}}</div>
 @endif
 

@@ -39,20 +39,7 @@
                                 </ul>
                             </li>
                         </ul>
-                        <ul style="float: left">
-                            <li>
-                                <a href="#" style="margin-left: 20px;">کالای دیجیتال</a>
-                                <ul >
-                                    <li><a href="#">گوشی موبایل</a></li>
-                                    <li><a href="#">تبلت</a></li>
-                                    <li><a href="#">لپ تاپ</a></li>
-                                    <li><a href="#">نمایشگر</a></li>
-                                    <li><a href="#">دوربین عکاسی</a></li>
-                                    <li><a href="#">لوازم جانبی رایانه</a></li>
-                                    <li><a href="#">لوازم جانبی موبایل</a></li>
-                                    <li><a href="#">سایر</a></li>
-                                </ul>
-                            </li>
+                            
                         </ul>
 
                     </ul>
@@ -67,6 +54,7 @@
     </div>
 
     <!---------------------------------->
+    @include('errors.master')
           <div class="container">
              <div class="row">
                  @foreach($products as $product)

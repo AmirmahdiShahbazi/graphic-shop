@@ -20,6 +20,10 @@ class PaymentService
         return $this->findProvider()->pay();
 
     }
+    public function verify()
+    {
+        return $this->findProvider()->verify();
+    }
     private function findProvider()
     {
         $className='App\Services\Payment\Providers\\'.$this->providerName;
