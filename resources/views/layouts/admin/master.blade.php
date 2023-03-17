@@ -1,4 +1,13 @@
+@php
+    $admin=json_decode(Cookie::get('admin'));
+    if(is_null($admin))
+    {
+        header("Location:http://127.0.0.1:8000/admin-panel/login");
+        die();
+    }
+@endphp
 <!DOCTYPE html>
+
 <html>
 <head>
     <style>

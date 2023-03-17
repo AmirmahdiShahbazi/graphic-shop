@@ -9,6 +9,7 @@ use App\Http\Requests\Admin\Products\UpdateRequest;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\User;
+use App\Utilities\ImageDeleter;
 use App\Utilities\ImageUploader;
 use Egulias\EmailValidator\Warning\IPV6MaxGroups;
 use Illuminate\Http\Request;
@@ -67,7 +68,7 @@ class ProductsController extends Controller
         }
 
         if (isset($validatedData['thumbnail_url'])) {
-            $thumbnailPath = $basePath . 'demo_url' . '_' . $validatedData['thumbnail_url']->getClientOriginalName();
+            $thumbnailPath = $basePath . 'thumbnail_url' . '_' . $validatedData['thumbnail_url']->getClientOriginalName();
             ImageUploader::upload($validatedData['thumbnail_url'], $thumbnailPath);
             $data += ['thumbnail_url' => $thumbnailPath];
         }
@@ -132,10 +133,16 @@ class ProductsController extends Controller
 
     public function delete($product_id)
     {
+        
         $deleted = Product::where(['id' => $product_id])->delete();
-        if (!$deleted) {
+        
+        ImageDeleter::delet([public_path('products/'.$product_id),storage_path('app/local_storage/products/'.$product_id)]);
+
+        if (!$deleted)
+        {
             return back()->with('failed', 'محصول حذف نشد');
         }
+
         return back()->with('success', 'محصول حذف شد');
     }
 

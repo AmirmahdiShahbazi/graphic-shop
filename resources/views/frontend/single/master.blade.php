@@ -61,8 +61,8 @@
 
     <div class="container" style="margin-top: 30px;">
 
-    <div class="col-md-4" >
         @foreach($similarProducts as $similarProduct)
+    <div class="col-md-4" >
         <div class="blog-content">
             <figure>
                 <img src="/{{$similarProduct->thumbnail_url}}" class="w-100">
@@ -75,8 +75,8 @@
             </ul>
             <a href="{{route('home.show',$product->id)}}" class="mybtn"><i class="fa fa-continuous"></i>ادامه مطلب&raquo;</a>
         </div>
-        @endforeach
     </div>
+    @endforeach
 
     </div>
 
