@@ -26,7 +26,8 @@ Route::prefix('')->group(callback: function () {
 
 Route::prefix('admin-panel')->group(function () {
     Route::prefix('login')->group(function(){
-        Route::get('',[LoginController::class,'index'])->name('admin.login');
+        Route::get('',[LoginController::class,'index'])->name('admin.login.index');
+        Route::post('',[LoginController::class,'login'])->name('admin.login');
     });
 
 

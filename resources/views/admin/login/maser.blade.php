@@ -2,19 +2,46 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Form Design</title>
+  <title>Login</title>
   <link rel="stylesheet" href="/login/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
 </head>
-<body>
+
 <!-- partial:index.partial.html -->
 <script src="https://code.jquery.com/jquery-2.1.0.min.js" ></script>
 <body>
 
-<form action="" method="POST">
+<form action="{{route('admin.login')}}" method="POST">
 @csrf
 <div id="formWrapper">
-<div id="form">
+
+
+
+<div id="form" >
+	@if ($errors->any())
+	<div class="alert alert-danger" style="margin: 5px;">
+		<ul>
+			@foreach ($errors->all() as $error)
+				<li>{{ $error }}</li>
+			@endforeach
+		</ul>
+	</div>
+	@endif
+
+
+
+	@if(session('success'))
+	<div style="margin-right: 300px;margin-left: 50px;" class="alert alert-success">{{session('success')}}</div>
+	@endif
+	@if(session('failed'))
+		<div class="alert alert-danger">{{session('failed')}}</div>
+	@endif
+
+
+
+	
 <div class="logo">
 <p style="font-weight: 700;color:rgb(111, 111, 111)">Admin-panel</p>
 </div>

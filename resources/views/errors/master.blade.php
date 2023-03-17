@@ -8,9 +8,9 @@
     </div>
 @endif
 @if(session('success'))
-    <div style="margin-right: 300px;margin-left: 50px;" class="alert alert-success">{{session('success')}}</div>
+    <div  class="alert alert-success" style="margin-right: 300px;margin-left: 50px;">{{session('success')}}</div>
 @endif
 @if(session('failed'))
-    <div class="alert alert-danger">{{session('failed')}}</div>
+    <div class="alert alert-danger" style="margin-right: 300px;margin-left: 50px;">{{session('failed')}}</div>
 @endif
 

@@ -12,7 +12,7 @@ use App\Models\User;
 use App\Utilities\ImageUploader;
 use Egulias\EmailValidator\Warning\IPV6MaxGroups;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use PHPUnit\Exception;
@@ -30,7 +30,8 @@ class ProductsController extends Controller
         try {
 
             $validatedData = $request->validated();
-            $admin = User::where('email', 'admin@gmail.com')->first();
+            $adminCookie=json_decode(Cookie::get('admin'),true);
+            $admin = User::where('email', $adminCookie['email'])->first();
             $created = Product::create([
                 'title' => $validatedData['title'],
                 'description' => $validatedData['description'],

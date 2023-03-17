@@ -57,6 +57,8 @@
             background-color: #0678F1;
         }
     </style>
+    
+
     <link rel='stylesheet' href='https://unpkg.com/react-quill@1.0.0/dist/quill.core.css'>
     <link rel='stylesheet' href='https://unpkg.com/react-quill@1.0.0/dist/quill.snow.css'>
     <link rel='stylesheet' href='https://unpkg.com/react-quill@1.0.0/dist/quill.bubble.css'>
@@ -155,5 +157,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.3/es6-shim.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/draft-js/0.10.0/Draft.js'></script>
 <script  src="/admin/dist/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
