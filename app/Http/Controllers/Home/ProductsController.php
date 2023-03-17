@@ -31,7 +31,7 @@ class ProductsController extends Controller
     {
         $product = Product::find($product_id);
         $similarProducts = Product::where('id', '<>', $product->id)->where('category_id', $product->category_id)->take(3)->get();
-//        dd($similarProducts);
+
         return view('frontend.single.master', compact('product', 'similarProducts'));
 
     }
